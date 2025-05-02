@@ -1,0 +1,34 @@
+{
+    "clientes": [
+    {
+    "nombre": "German",
+    "scoring": 1,
+    "siguiendo": ["Sofi", "Marco"],
+    "conexiones": ["Sofi", "Marco", "Valen"]
+    },
+    {
+    "nombre": "Sofi",
+    "scoring": 2,
+    "siguiendo": ["Valen"],
+    "conexiones": ["German", "Valen"]
+    },
+    {
+    "nombre": "Marco",
+    "scoring": 10,
+    "siguiendo": [],
+    "conexiones": ["German", "Nati"]
+    },
+    {
+    "nombre": "Valen",
+    "scoring": 8,
+    "siguiendo": ["German"],
+    "conexiones": ["Sofi", "German"]
+    },
+    {
+    "nombre": "Nati",
+    "scoring": 5,
+    "siguiendo": [],
+    "conexiones": ["Marco"]
+    }
+    ]
+    }
