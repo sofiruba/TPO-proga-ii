@@ -31,4 +31,15 @@ public class ListaClienteTest {
         lista.agregar(c2);
         assertEquals(c1, lista.obtenerClientePorNombre("Pedro"));
     }
+    @Test
+    public void obtenerPorScoring() {
+        ListaCliente lista = new ListaCliente();
+        Cliente c1 = new Cliente("Pedro", 6, new HashSet<>(), new HashSet<>());
+        Cliente c2 = new Cliente("Ana", 7, new HashSet<>(), new HashSet<>());
+        lista.agregar(c1);
+        lista.agregar(c2);
+        assertEquals(c1, lista.obtenerClientesPorScoring(6));
+
+    }
+
 }
