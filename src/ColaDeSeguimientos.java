@@ -26,4 +26,7 @@ public class ColaDeSeguimientos {
         String log = origen + " ahora sigue a " + destino;
         registroDeAcciones.add(log);
     }
+    public List<Seguimiento> getSolicitudes() {
+        return new ArrayList<>(cola);
+    }
 }

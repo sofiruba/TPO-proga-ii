@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestionarClientes {
     ListaCliente clientes;
@@ -32,5 +33,14 @@ public class GestionarClientes {
 
     public void deshacerUltimaAccion() throws Exception {
         Accion eliminada = historialDeAcciones.eliminarAccion();
+    }
+    public ArrayList<Cliente> getClientes(){
+        return clientes.getClientes();
+    }
+    public List<Seguimiento> getSolicitudes() {
+        return colaDeSeguimientos.getSolicitudes();
+    }
+    public List <Accion>  getHistorialDeAcciones() {
+        return historialDeAcciones.getHistorialDeAcciones();
     }
 }
