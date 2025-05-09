@@ -1,49 +1,90 @@
-import java.util.HashSet;
+import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        System.out.println("=== Iniciando sistema de gestión de clientes ===");
 
-        // Inicializar el gestor
-        GestionarClientes gestionarClientes = new GestionarClientes();
-        System.out.println("✔ Instancia de GestionarClientes creada.");
+    private static void buscarClientesPorNombre(GestionarClientes gc, Scanner sc) {
+        System.out.print("Ingrese el nombre del cliente: ");
+        String nombre = sc.nextLine();
+        gc.buscarClientePorNombre(nombre);
+    }
 
-        // Mostrar la lista inicial de clientes (si cargó desde JSON)
-        System.out.println("📋 Lista de clientes cargada desde JSON:");
+    private static void buscarClientesPorScoring(GestionarClientes gc, Scanner sc) {
+        System.out.print("Ingrese el scoring del cliente: ");
+        int scoring = sc.nextInt();
+        sc.nextLine(); // Limpiar el buffer
+        gc.buscarClientePorScoring(scoring);
+    }
 
-        gestionarClientes.clientes.imprimirLista();
+    private static void registrarAccion(GestionarClientes gc, Scanner sc) {
+        System.out.print("Ingrese el tipo de la nueva Acción: ");
+        String tipoAccion = sc.nextLine();
+        gc.registrarAccion(tipoAccion);
+    }
 
-        // Crear clientes nuevos
-        Cliente cliente1 = new Cliente("Ana", 8, new HashSet<>(), new HashSet<>());
-        Cliente cliente2 = new Cliente("Bruno", 9, new HashSet<>(), new HashSet<>());
+    private static void eliminarAccion(GestionarClientes gc) throws Exception {
+        gc.eliminarAccion();
+    }
 
-        // Agregar clientes
-        gestionarClientes.agregarCliente(cliente1);
-        gestionarClientes.agregarCliente(cliente2);
-        System.out.println("✅ Clientes agregados: Ana y Bruno.");
+    private static void crearSolicitud(GestionarClientes gc, Scanner sc) throws Exception {
+        System.out.print("Ingrese el nombre del seguidor: ");
+        String nombre1 = sc.nextLine();
+        System.out.print("Ingrese el nombre del seguido: ");
+        String nombre2 = sc.nextLine();
+        gc.enviarSolicitud(nombre1, nombre2);
+    }
 
-        // Enviar solicitud de seguimiento de Ana a Bruno
-        gestionarClientes.enviarSolicitud("Ana", "Bruno");
-        System.out.println("📨 Solicitud enviada de Ana a Bruno.");
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        GestionarClientes gc = new GestionarClientes();
 
-        // Procesar la solicitud
-        System.out.println("⚙ Procesando solicitud...");
-        gestionarClientes.procesarSolicitud();
+        boolean salir = false;
 
-        // Deshacer última acción
-        System.out.println("↩ Intentando deshacer última acción...");
-        try {
-            gestionarClientes.deshacerUltimaAccion();
-            System.out.println("✔ Última acción deshecha correctamente.");
-        } catch (Exception e) {
-            System.out.println("⚠ No se pudo deshacer la acción: " + e.getMessage());
+        while (!salir) {
+            System.out.println("\n--- MENÚ ---");
+            System.out.println("1. Buscar cliente por nombre");
+            System.out.println("2. Buscar cliente por scoring");
+            System.out.println("3. Registrar acción");
+            System.out.println("4. Eliminar última acción");
+            System.out.println("5. Crear solicitud de seguimiento");
+            System.out.println("6. Procesar solicitud de seguimiento");
+            System.out.println("7. Consultar acciones");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            int opcion = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    buscarClientesPorNombre(gc, sc);
+                    break;
+                case 2:
+                    buscarClientesPorScoring(gc, sc);
+                    break;
+                case 3:
+                    registrarAccion(gc, sc);
+                    break;
+                case 4:
+                    eliminarAccion(gc);
+                    break;
+                case 5:
+                    crearSolicitud(gc, sc);
+                    break;
+                case 6:
+                    gc.procesarSolicitud();
+                    break;
+                case 7:
+                    gc.consultarAcciones();
+                    break;
+                case 0:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+            }
         }
 
-        // Mostrar estado final de los clientes
-        System.out.println("\n📊 Estado final de los clientes:");
-        gestionarClientes.clientes.imprimirLista();
-
-
-        System.out.println("\n=== Fin de la prueba ===");
+        sc.close();
+        System.out.println("Programa finalizado.");
     }
 }

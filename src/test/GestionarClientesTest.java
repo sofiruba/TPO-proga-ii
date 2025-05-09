@@ -16,7 +16,7 @@ public class GestionarClientesTest {
         lista.add(new Cliente("Ana", 7, new HashSet<>(), new HashSet<>()));
         GestionarClientes gc = new GestionarClientes();
         gc.enviarSolicitud("Ana", "Pedro");
-        assertEquals(1, gc.getSolicitudes().size());
+        assertEquals(1, gc.getSolicitudesLista().size());
     }
     @Test
     public void test_procesarSolicitud() {
@@ -25,7 +25,7 @@ public class GestionarClientesTest {
         GestionarClientes gc = new GestionarClientes();
         gc.enviarSolicitud("Ana", "Pedro");
         gc.procesarSolicitud();
-        assertEquals(0, gc.getSolicitudes().size());
+        assertEquals(0, gc.getSolicitudesLista().size());
     }
     @Test
     public void test_deshacerUltimaAccion() throws Exception {
@@ -34,7 +34,7 @@ public class GestionarClientesTest {
         GestionarClientes gc = new GestionarClientes();
         gc.agregarCliente(new Cliente("Ana", 7, new HashSet<>(), new HashSet<>()));
         gc.deshacerUltimaAccion();
-        assertEquals(0, gc.getHistorialDeAcciones().size());
+        assertEquals(0, gc.getHistorialDeAccionesLista().size());
     }
     
 }

@@ -33,7 +33,7 @@ public class Cliente {
 
     private Set<String> validarLista(String nombre, Set<String> lista) {
         if (lista != null) {
-            for (String item : lista) {
+            for (String item : lista) { 
                 if (item == null || item.isEmpty()) {
                     throw new IllegalArgumentException("La lista contiene un nombre inválido.");
                 }

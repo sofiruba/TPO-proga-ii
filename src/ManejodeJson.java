@@ -3,7 +3,7 @@ import com.google.gson.Gson;
 
 public class ManejodeJson {
     private ListaCliente listaClientes;
-    private final String rutaArchivo = "C:\\Users\\USUARIO\\Documents\\documentos\\UADE\\prog\\TPO - copia\\TPO - copia\\src\\Listadeclientes.json";
+    private final String rutaArchivo = "C:\\Users\\GERMAN\\Documents\\GitHub\\TPO-proga-ii\\src\\Listadeclientes.json";
 
     public ManejodeJson() {
         this.listaClientes = new ListaCliente();
