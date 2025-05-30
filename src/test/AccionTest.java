@@ -10,7 +10,7 @@ public class AccionTest {
     }
     @Test
     public void test_getDetalles() {
-        Accion accion = new Accion("LOGIN");
+        Accion accion = new Accion("LOGIN", "detalle");
         assertEquals("detalle", accion.getDetalles());
     }
     @Test

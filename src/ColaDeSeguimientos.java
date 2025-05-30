@@ -14,10 +14,10 @@ public class ColaDeSeguimientos {
         System.out.println("Solicitud agregada: " + solicitud);
     }
 
-    public void procesarProxima() {
+    public Seguimiento procesarProxima() {
         if (cola.isEmpty()) {
             System.out.println("No hay solicitudes para procesar.");
-            return;
+            return null;
         }
         Seguimiento solicitud = cola.poll();
         String origen = solicitud.getOrigen();
@@ -25,6 +25,7 @@ public class ColaDeSeguimientos {
 
         String log = origen + " ahora sigue a " + destino;
         registroDeAcciones.add(log);
+        return solicitud;
     }
     public List<Seguimiento> getSolicitudes() {
         return new ArrayList<>(cola);

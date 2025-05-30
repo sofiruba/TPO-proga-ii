@@ -11,7 +11,7 @@ public class App {
     private static void buscarClientesPorScoring(GestionarClientes gc, Scanner sc) {
         System.out.print("Ingrese el scoring del cliente: ");
         int scoring = sc.nextInt();
-        sc.nextLine(); // Limpiar el buffer
+        sc.nextLine();
         gc.buscarClientePorScoring(scoring);
     }
 
@@ -25,6 +25,9 @@ public class App {
         gc.eliminarAccion();
     }
 
+    private static void agregarCliente(GestionarClientes gc, Scanner sc) {
+
+    }
     private static void crearSolicitud(GestionarClientes gc, Scanner sc) throws Exception {
         System.out.print("Ingrese el nombre del seguidor: ");
         String nombre1 = sc.nextLine();
