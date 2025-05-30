@@ -105,6 +105,31 @@ public class ListaCliente {
     
         return clientesEncontrados; 
     }
+
+    public ArrayList<Cliente> ordenarPorScoring(){
+        //Entra el scoring de clientes como parametro,
+        ArrayList <Integer> listaDeScoring= new ArrayList<Integer>();
+        for (Cliente cliente : clientes) {
+
+                listaDeScoring.add(cliente.getScoring());
+
+        }
+        if (listaDeScoring.isEmpty()) {
+            System.out.println("No se encontraron clientes con Scoring ");
+            return null;
+        } else {
+            ArrayList<Cliente> ListaDeClientesPorScoring = new ArrayList<>();
+            listaDeScoring.sort(null); // Ordena la lista de scoring
+            for (int i=0 ;i< listaDeScoring.size() ;i++){
+                if (clientes.get(i).getScoring()== listaDeScoring.get(i)) {
+                    ListaDeClientesPorScoring.add(i,  clientes.get(i));}
+            }
+            return ListaDeClientesPorScoring;
+        }
+
+
+    }
+
     private boolean nombresExisten(Set<String> nombres) {
         for (String nombre : nombres) {
             if (!clientesMap.containsKey(nombre)) {
