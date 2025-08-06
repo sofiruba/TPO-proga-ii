@@ -1,34 +1,44 @@
 {
     "clientes": [
-    {
-    "nombre": "German",
-    "scoring": 1,
-    "siguiendo": ["Sofi", "Marco"],
-    "conexiones": ["Sofi", "Marco", "Valen"]
-    },
-    {
-    "nombre": "Sofi",
-    "scoring": 2,
-    "siguiendo": ["Valen"],
-    "conexiones": ["German", "Valen"]
-    },
-    {
-    "nombre": "Marco",
-    "scoring": 10,
-    "siguiendo": [],
-    "conexiones": ["German", "Nati"]
-    },
-    {
-    "nombre": "Valen",
-    "scoring": 8,
-    "siguiendo": ["German"],
-    "conexiones": ["Sofi", "German"]
-    },
-    {
-    "nombre": "Nati",
-    "scoring": 5,
-    "siguiendo": [],
-    "conexiones": ["Marco"]
-    }
+        {
+            "nombre": "German",
+            "scoring": 1,
+            "siguiendo": [ "Nati"],
+            "conexiones": ["Valen"],
+            "amistades": ["Sofi"],
+            "idgrafo": 1
+        },
+        {
+            "nombre": "Sofi",
+            "scoring": 2,
+            "siguiendo": [],
+            "conexiones": ["Marco", "Nati"],
+            "amistades": ["German"],
+            "idgrafo": 2
+        },
+        {
+            "nombre": "Marco",
+            "scoring": 10,
+            "siguiendo": ["Valen", "Sofi"],
+            "conexiones": [ "Nati"],
+            "amistades": [],
+            "idgrafo": 3
+        },
+        {
+            "nombre": "Valen",
+            "scoring": 8,
+            "siguiendo": ["Nati", "German"],
+            "conexiones": ["Marco"],
+            "amistades": [],
+            "idgrafo": 4
+        },
+        {
+            "nombre": "Nati",
+            "scoring": 5,
+            "siguiendo": ["Sofi", "Marco"],
+            "conexiones": ["German", "Valen"],
+            "amistades": [],
+            "idgrafo": 5
+        }
     ]
-    }
+}

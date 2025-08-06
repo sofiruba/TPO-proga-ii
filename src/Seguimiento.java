@@ -15,4 +15,17 @@ public class Seguimiento {
         return destino;
     }
 
+    @Override
+    public String toString() {
+        return origen + " → " + destino;
+    }
+
+    public void imprimirDetallado() {
+        System.out.println("┌─────────────────────────────────────────┐");
+        System.out.printf("│ Solicitud de Seguimiento                │%n");
+        System.out.printf("│ De: %-32s │%n", origen);
+        System.out.printf("│ Para: %-30s │%n", destino);
+        System.out.println("└─────────────────────────────────────────┘");
+    }
+
 }

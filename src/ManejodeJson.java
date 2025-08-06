@@ -2,18 +2,17 @@ import java.io.FileReader;
 import com.google.gson.Gson;
 
 public class ManejodeJson {
-    private ListaCliente listaClientes;
-    private final String rutaArchivo = "C:\\Users\\USUARIO\\Documents\\GitHub\\TPO-proga-ii\\src\\Listadeclientes.json";
-
+    private GestorClientes listaClientes;
+    private final String rutaArchivo = "C:\\Users\\Natalia\\Downloads\\final falta test\\progra ii reco\\src\\Listadeclientes.json";
     public ManejodeJson() {
-        this.listaClientes = new ListaCliente();
+        this.listaClientes = new GestorClientes();
         cargarDesdeJson();  // Llamar a cargarDesdeJson sin el parámetro
     }
     private void cargarDesdeJson() {
         try {
             Gson gson = new Gson();
             FileReader reader = new FileReader(rutaArchivo); 
-            ListaCliente clientesDesdeJson = gson.fromJson(reader, ListaCliente.class);
+            GestorClientes clientesDesdeJson = gson.fromJson(reader, GestorClientes.class);
 
             if (clientesDesdeJson != null) {
                 for (Cliente cliente : clientesDesdeJson.getClientes()) {
@@ -34,7 +33,7 @@ public class ManejodeJson {
         listaClientes.imprimirLista();
     }
 
-    public ListaCliente getListaClientes() {
+    public GestorClientes getListaClientes() {
         return listaClientes;
     }
 }

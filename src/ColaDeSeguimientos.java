@@ -30,4 +30,8 @@ public class ColaDeSeguimientos {
     public List<Seguimiento> getSolicitudes() {
         return new ArrayList<>(cola);
     }
+
+    public boolean estaVacia() {
+        return cola.isEmpty();
+    }
 }
