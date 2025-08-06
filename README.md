@@ -12,40 +12,6 @@ Sistema de gestión de clientes con funcionalidades de red social que incluye un
 - ✅ Historial de acciones
 - ✅ Gestión de privacidad
 
-### 🆕 FUNCIONALIDADES NUEVAS - CÁLCULO DE DISTANCIA:
-- ✅ **Opción 14**: 📏 Calcular distancia entre clientes
-- ✅ **Opción 15**: 🗺️ Mostrar camino más corto entre clientes
-
-## 🎯 ALGORITMO IMPLEMENTADO
-**BFS (Breadth-First Search)** para encontrar el camino más corto entre dos clientes:
-- Retorna el número mínimo de saltos necesarios
-- Maneja casos especiales (mismo cliente, sin conexión, clientes inexistentes)
-- Considera todas las conexiones: siguiendo, conexiones y amistades
-
-## 🚀 CÓMO EJECUTAR EL PROGRAMA
-
-### Compilar:
-```bash
-javac -cp "lib/*" -d bin src/*.java
-```
-
-### Ejecutar:
-```bash
-java -cp "bin;lib/*" App
-```
-
-## 📊 CASOS DE PRUEBA PARA DISTANCIA
-
-### Con los datos del JSON (German, Sofi, Marco, Valen, Nati):
-- German → Marco: 1 salto (conexión directa)
-- German → Nati: 2 saltos (German → Marco → Nati)
-- Sofi → Nati: 2 saltos (Sofi → Marco → Nati)
-- German → German: 0 saltos (mismo cliente)
-
-### Casos de error:
-- Cliente inexistente: retorna -2
-- Sin conexión: retorna -1
-- Parámetros nulos: retorna -2
 
 ## 📁 ESTRUCTURA DE ARCHIVOS
 
@@ -67,21 +33,6 @@ bin/                          # Archivos compilados
 lib/                          # Librerías (Gson, JUnit)
 test/                         # Tests unitarios
 ```
-
-## 🎨 MEJORAS VISUALES
-- Menú con emojis para mejor experiencia de usuario
-- Formato de salida profesional con marcos ASCII
-- Mensajes de error claros y descriptivos
-
-## 👨‍💻 IMPLEMENTACIÓN TÉCNICA
-- **Algoritmo**: BFS implementado en `GestorClientes.calcularDistancia()`
-- **Validaciones**: Manejo completo de errores y casos edge
-- **Interfaz**: Integración perfecta con el sistema existente
-- **Eficiencia**: O(V + E) donde V = vértices, E = aristas
-
----
-**PROYECTO COMPLETADO Y LISTO PARA ENTREGA** ✅
-
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
