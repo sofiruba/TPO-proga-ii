@@ -3,8 +3,6 @@
 ## 📋 DESCRIPCIÓN DEL PROYECTO
 Sistema de gestión de clientes con funcionalidades de red social que incluye un mecanismo de cálculo de distancia (número de saltos) entre clientes en la red.
 
-## ✅ FUNCIONALIDADES IMPLEMENTADAS
-
 ### 🔧 FUNCIONALIDADES BÁSICAS:
 - ✅ Gestión de clientes (buscar, registrar acciones)
 - ✅ Sistema de seguimientos y solicitudes
